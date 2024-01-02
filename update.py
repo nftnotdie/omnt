@@ -10,7 +10,7 @@ def update_status_json():
         data = json.load(file)
 
     # 如果当前分钟是5的整数倍，则更新data/status.json的内容
-    if current_minute % 5 == 0:
+    if current_minute % 2 == 0:
         data['status'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
         # 将更新后的内容写回data/status.json
