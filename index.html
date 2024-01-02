@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Display</title>
+</head>
+<body>
+    <h1>Status:</h1>
+    <p id="status"></p>
+
+    <script>
+        // 使用JavaScript从status.json中获取数据并显示在页面上
+        fetch('data/status.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.status;
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
